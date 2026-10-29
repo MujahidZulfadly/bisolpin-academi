@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masuk ke Sistem - BISOLPIN ACADEMY (ERP / LMS)</title>
+  
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --bg-page: #f5f6fa;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius-lg: 20px;
+      --radius-md: 10px;
+      --radius-pill: 9999px;
+      --shadow-card: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+      --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .brand-header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .brand-logo-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+      border-radius: var(--radius-md);
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 8px 18px rgba(37, 99, 235, 0.25);
+    }
+
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    .login-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      padding: 2rem;
+    }
+
+    /* Demo Quick Login Box */
+    .demo-box {
+      background: #f8fafc;
+      border: 1px dashed #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 0.85rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .demo-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .demo-pills-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .btn-demo {
+      background: white;
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 0.3rem 0.65rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-demo:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Form Inputs */
+    .form-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.7rem 0.95rem;
+      font-size: 0.9rem;
+      font-family: inherit;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      background: white;
+      color: var(--text-main);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 0.925rem;
+      font-weight: 700;
+      font-family: inherit;
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+    }
+
+    .btn-submit:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-submit:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+    }
+
+    /* Alert Message */
+    .alert-error {
+      display: none;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      color: #b91c1c;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.825rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .footer-note {
+      text-align: center;
+      margin-top: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Header Logo -->
+    <div class="brand-header">
+      <div class="brand-logo-badge">B</div>
+      <h1 class="brand-title">BISOLPIN ACADEMY</h1>
+      <p class="brand-subtitle">Sistem Informasi Manajemen Bimbingan Belajar (ERP / LMS)</p>
+    </div>
+
+    <!-- Card Login -->
+    <div class="login-card">
+      <!-- Kotak Demo Cepat -->
+      <div class="demo-box">
+        <div class="demo-title">
+          <span>1-Click Akun Demo:</span>
+          <span style="color: #2563eb; font-weight: 700;">Pass: password123</span>
+        </div>
+        <div class="demo-pills-row">
+          <button type="button" class="btn-demo" onclick="fillDemo('siswa_andi', 'password123')">🎓 Siswa</button>
+          <button type="button" class="btn-demo" onclick="fillDemo('mentor_siti', 'password123')">👨‍🏫 Mentor</button>
+          <button type="button" class="btn-demo" onclick="fillDemo('ortu_andi', 'password123')">👨‍👩‍👦 Orang Tua</button>
+          <button type="button" class="btn-demo" onclick="fillDemo('admin', 'password123')">🔑 Admin</button>
+          <button type="button" class="btn-demo" onclick="fillDemo('staff_budi', 'password123')">📋 Staff</button>
+        </div>
+      </div>
+
+      <!-- Pesan Kesalahan / Error Alert -->
+      <div id="error-message" class="alert-error">
+        <i data-lucide="alert-circle" style="width: 18px; height: 18px; flex-shrink: 0;"></i>
+        <span id="error-text">Kombinasi username atau password salah.</span>
+      </div>
+
+      <!-- Form Login -->
+      <form id="login-form">
+        <div class="form-group">
+          <label class="form-label" for="username">Username</label>
+          <input type="text" id="username" class="form-input" placeholder="Masukkan username" required autofocus autocomplete="username">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="password">Kata Sandi</label>
+          <input type="password" id="password" class="form-input" placeholder="Masukkan kata sandi" required autocomplete="current-password">
+        </div>
+
+        <button type="submit" id="btn-login" class="btn-submit">
+          <i data-lucide="log-in" style="width: 18px; height: 18px;"></i>
+          <span id="btn-text">Masuk ke Sistem</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="footer-note">
+      &copy; 2026 BISOLPIN ACADEMY &bull; Akses Terbatas Internal
+    </div>
+  </div>
+
+  <!-- Script Login -->
+  <script src="js/login.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,15 @@
+{
+  "name": "bisolpin-academy",
+  "version": "1.0.0",
+  "description": "Sistem Informasi Manajemen Bimbingan Belajar BISOLPIN ACADEMY (ERP & LMS)",
+  "scripts": {
+    "start": "cd backend && node server.js",
+    "seed": "cd backend && node seeders/seed.js",
+    "test:auth": "cd backend && node test-auth.js",
+    "test:api": "cd backend && node test-phase3.js"
+  },
+  "keywords": ["erp", "lms", "bimbel", "bisolpin-academy"],
+  "author": "BISOLPIN ACADEMY Dev Team",
+  "license": "ISC"
+}
+
